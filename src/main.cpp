@@ -34,7 +34,6 @@ int main () {
   double length, width, radius;
 
   // TODO #2: Call the function menuSelect and save the result
-  char selection = menuSelect ();
 
   // TODO #3: Using a switch statement, test the return value from TODO #2
   //          If the return value is R, ask the user to enter a length and
@@ -42,23 +41,6 @@ int main () {
 
   // TODO #4: Do the same thing for a circle
 
-  switch (selection) {
-  case SELECT_RECTANGLE:
-    cout << "Enter length: ";
-    cin >> length;
-    cout << "Enter width: ";
-    cin >> width;
-    cout << "Rectangle Length: " << length << " Rectangle width: " << width
-      << " Rectangle Area: " << rectangleArea (length, width) << endl;
-    break;
-
-  case SELECT_CIRCLE:
-    cout << "Enter radius: ";
-    cin >> radius;
-    cout << "Circle Radius: " << radius << " Circle Area: "
-      << circleArea (radius) << endl;
-    break;
-  }
 
   return EXIT_SUCCESS;
 }
@@ -78,14 +60,3 @@ double circleArea (double radius) {
 //          Continue asking the user for valid input using a do-while loop
 //          The user interaction is to be:
 //          Enter C)ircle or R)ectangle:
-
-char menuSelect () {
-  char selection;
-
-  do {
-    cout << "Enter C)ircle or R)ectangle: ";
-    cin >> selection;
-  } while (selection != SELECT_RECTANGLE && selection != SELECT_CIRCLE);
-
-  return selection;
-}
